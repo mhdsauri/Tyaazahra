@@ -1,0 +1,431 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", sans-serif;
+    color: #1a365d;
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    background-attachment: fixed;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+
+/* Animasi container */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header dengan tema Ravon */
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease-out 0.5s forwards;
+}
+
+.header h1 {
+    background: linear-gradient(135deg, #0891b2 0%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    letter-spacing: -0.5px;
+}
+
+.header h1 i {
+    background: linear-gradient(135deg, #0891b2 0%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.6rem;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Payment Item dengan animasi bertahap */
+.payment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(8, 145, 178, 0.08);
+    opacity: 0;
+    transform: translateY(15px);
+    position: relative;
+    overflow: hidden;
+}
+
+.payment-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #0891b2 0%, #0ea5e9 100%);
+    border-radius: 4px 0 0 4px;
+}
+
+.payment-item:nth-child(1) {
+    animation: slideUp 0.5s ease-out 0.8s forwards;
+}
+
+.payment-item:nth-child(2) {
+    animation: slideUp 0.5s ease-out 1s forwards;
+}
+
+.payment-item:nth-child(3) {
+    animation: slideUp 0.5s ease-out 1.2s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.payment-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(8, 145, 178, 0.15);
+    border-color: #bae6fd;
+}
+
+.payment-details {
+    flex: 1;
+}
+
+.payment-details h3 {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.account {
+    color: #475569;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Buttons */
+.copy-btn,
+.download-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.copy-btn::before,
+.download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.copy-btn:hover::before,
+.download-btn:hover::before {
+    opacity: 1;
+}
+
+.copy-btn {
+    background: linear-gradient(135deg, #0891b2 0%, #0ea5e9 100%);
+    color: white;
+}
+
+.copy-btn:hover {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(8, 145, 178, 0.4);
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Petunjuk dengan animasi */
+.instructions {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 8px;
+    border: 1px solid #bae6fd;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: slideUp 0.5s ease-out 1.4s forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+.instructions::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(8, 145, 178, 0.05) 0%,
+        rgba(14, 165, 233, 0.05) 100%
+    );
+}
+
+.instructions h4 {
+    background: linear-gradient(135deg, #0891b2 0%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.instructions h4 i {
+    font-size: 1.1rem;
+}
+
+.instructions ul {
+    list-style: none;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.instructions li {
+    margin-bottom: 10px;
+    color: #475569;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.instructions li i {
+    background: linear-gradient(135deg, #0891b2 0%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out 1.6s forwards;
+    position: relative;
+}
+
+.footer::before {
+    content: "RAVON";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(8, 145, 178, 0.03);
+    letter-spacing: 5px;
+    z-index: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #0891b2 0%, #0ea5e9 100%);
+    color: white;
+    padding: 14px 22px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(8, 145, 178, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 1000;
+    max-width: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 20px;
+        border-radius: 18px;
+        max-width: 100%;
+    }
+
+    .header {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .main-content {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .payment-item {
+        padding: 14px 18px;
+        border-radius: 14px;
+    }
+
+    .payment-details h3 {
+        font-size: 1rem;
+    }
+
+    .account {
+        font-size: 0.8rem;
+    }
+
+    .copy-btn,
+    .download-btn {
+        width: 46px;
+        height: 46px;
+        padding: 10px;
+        font-size: 0.9rem;
+        border-radius: 12px;
+    }
+
+    .instructions {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .instructions h4 {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+
+    .instructions li {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    .footer {
+        padding-top: 15px;
+        font-size: 0.8rem;
+    }
+
+    .footer::before {
+        font-size: 3rem;
+    }
+
+    .toast {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        text-align: center;
+        max-width: calc(100% - 30px);
+        font-size: 0.85rem;
+        padding: 12px 18px;
+    }
+}

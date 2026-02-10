@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ravon Payment</title>
+        <!-- Favicon utama -->
+        <link rel="icon" type="image/png" href="https://upld.zone.id/uploads/enixz3iq/profile.webp" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1><i class="fas fa-wallet"></i>Payment TyaaZahra</h1>
+            </header>
+
+            <!-- Payment Methods -->
+            <main class="main-content">
+                <!-- Dana -->
+                <div class="payment-item">
+                    <div class="payment-details">
+                        <h3>DANA 1</h3>
+                        <p class="account">A/N : MAHNIAR</p>
+                    </div>
+                    <button class="copy-btn" data-number="089524724318">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+
+                <!-- QRIS -->
+                <div class="payment-item">
+                    <div class="payment-details">
+                        <h3>QRIS</h3>
+                        <p class="account">Scan untuk pembayaran</p>
+                    </div>
+                    <a
+                        href="images/qris.jpg"
+                        download="qris_tyazhra_market.jpg"
+                        class="download-btn"
+                    >
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+
+                <!-- Sea Bank -->
+                <div class="payment-item">
+                    <div class="payment-details">
+                        <h3>DANA 2</h3>
+                        <p class="account">A/N : TUGINO</p>
+                    </div>
+                    <button class="copy-btn" data-number="083846294050">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+
+                <!-- Petunjuk -->
+                <div class="instructions">
+                    <h4><i class="fas fa-info-circle"></i> Petunjuk</h4>
+                    <ul>
+                        <li>
+                            Klik tombol <i class="far fa-copy"></i> untuk salin
+                            nomor
+                        </li>
+                        <li>
+                            Klik tombol <i class="fas fa-download"></i> untuk
+                            unduh QRIS
+                        </li>
+                    </ul>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>© TyaaZahra. All rights reserved.</p>
+            </footer>
+        </div>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast">
+            <span id="toast-text">Nomor berhasil disalin!</span>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
