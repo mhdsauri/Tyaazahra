@@ -121,6 +121,10 @@ body {
     animation: slideUp 0.5s ease-out 1.2s forwards;
 }
 
+.payment-item:nth-child(4) {
+    animation: slideUp 0.5s ease-out 1.4s forwards;
+}
+
 @keyframes slideUp {
     to {
         opacity: 1;
